@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+backend/dados/fila.db*
+backend/previsao/dados/dados_reais.csv
+*.zip

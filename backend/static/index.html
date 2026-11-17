@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fila Virtual — Citizen Assist AI</title>
+  <link rel="stylesheet" href="/static/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>Fila Virtual</h1>
+      <p class="sub">Citizen Assist AI · atendimento acompanhado em tempo real</p>
+    </div>
+    <p id="conexao" class="pill neutro" role="status" aria-live="polite">Conectando ao servidor…</p>
+  </header>
+
+  <main>
+    <section class="cartoes" aria-label="Situação atual da fila">
+      <article class="cartao destaque">
+        <h2>Pessoas na fila</h2>
+        <p class="valor" id="fila" aria-live="polite">–</p>
+        <p class="detalhe">aguardando atendimento agora</p>
+      </article>
+
+      <article class="cartao destaque">
+        <h2>Tempo estimado de espera</h2>
+        <p class="valor" id="espera-ia" aria-live="polite">–</p>
+        <p class="detalhe">para quem chegar agora · IA (regressão linear)</p>
+        <p class="comparacao">Método convencional: <strong id="espera-conv">–</strong></p>
+        <p class="aviso" id="aviso-fallback" hidden>Ainda sem média recente de atendimento: a IA está usando o método convencional.</p>
+      </article>
+
+      <article class="cartao">
+        <h2>Atendimentos concluídos</h2>
+        <p class="valor" id="atendidos" aria-live="polite">–</p>
+        <p class="detalhe" id="media-atendimento">média recente: –</p>
+      </article>
+
+      <article class="cartao">
+        <h2>Operações recusadas</h2>
+        <p class="valor" id="rejeitadas" aria-live="polite">–</p>
+        <p class="detalhe">por exemplo, conclusão com a fila vazia</p>
+      </article>
+    </section>
+
+    <section class="duplo">
+      <div class="bloco" aria-labelledby="t-disp">
+        <h2 id="t-disp">Dispositivo e rede</h2>
+        <dl class="lista">
+          <dt>ESP32</dt><dd id="disp-status">–</dd>
+          <dt>Último evento</dt><dd id="disp-ultimo">–</dd>
+          <dt>Servidor ↔ broker MQTT</dt><dd id="mqtt-status">–</dd>
+          <dt>Eventos recebidos</dt><dd id="ev-total">–</dd>
+          <dt>Eventos perdidos</dt><dd id="ev-perdidos">–</dd>
+          <dt>Mensagens descartadas</dt><dd id="msg-invalidas">–</dd>
+          <dt>Modelo de previsão</dt><dd id="modelo">–</dd>
+        </dl>
+      </div>
+
+      <div class="bloco" aria-labelledby="t-graf">
+        <h2 id="t-graf">Fila nos últimos eventos</h2>
+        <svg id="grafico" viewBox="0 0 320 110" role="img" aria-label="Evolução do tamanho da fila nos últimos eventos"></svg>
+        <p class="detalhe" id="grafico-legenda">Aguardando eventos…</p>
+      </div>
+    </section>
+
+    <section class="bloco" aria-labelledby="t-ev">
+      <h2 id="t-ev">Últimos eventos</h2>
+      <div class="rolagem">
+        <table>
+          <thead>
+            <tr><th scope="col">Hora</th><th scope="col">Evento</th><th scope="col">Fila</th><th scope="col">Atendidos</th><th scope="col">Espera</th><th scope="col">Atendimento</th></tr>
+          </thead>
+          <tbody id="eventos"><tr><td colspan="6">Nenhum evento recebido ainda.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Os dados vêm do ESP32 por MQTT e se atualizam sozinhos a cada 2 segundos. A previsão de espera usa um modelo treinado com <strong>dados simulados</strong>.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

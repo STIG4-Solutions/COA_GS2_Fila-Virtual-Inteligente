@@ -1,0 +1,39 @@
+{
+  "atributos": [
+    "pessoas_a_frente",
+    "media_atendimento_recente_s",
+    "hora_do_dia"
+  ],
+  "coeficientes": [
+    308.9912047595797,
+    0.5530219036650041,
+    -23.705505014703977
+  ],
+  "intercepto": -34.50591094742049,
+  "media_historica_s": 227.79544865067464,
+  "info": {
+    "origem_dos_dados": [
+      "SIMULADO"
+    ],
+    "AVISO": "Treinado com dados SIMULADOS",
+    "linhas_treino": 2668,
+    "linhas_teste": 1034,
+    "dias_treino": 28,
+    "dias_teste": 12,
+    "treinado_em_linhas_com_fila_ge_1": 1714,
+    "regra": "pessoas_a_frente == 0 => espera 0; previsoes negativas viram 0",
+    "modelo_escolhido": "A_atributos_brutos",
+    "validacao_cruzada_treino": {
+      "A_atributos_brutos": {
+        "RMSE_s_medio": 375.7736643778846,
+        "MAE_s_medio": 237.93186623699435,
+        "folds": 4
+      },
+      "B_com_pessoas_x_media": {
+        "RMSE_s_medio": 378.4591521987224,
+        "MAE_s_medio": 236.2822166399439,
+        "folds": 4
+      }
+    }
+  }
+}

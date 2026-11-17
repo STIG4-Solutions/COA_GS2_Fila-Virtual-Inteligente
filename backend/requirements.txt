@@ -1,0 +1,4 @@
+# Backend (Etapa 4) — só o necessário para rodar o servidor.
+# Para refazer a simulação/treino da Etapa 3, use previsao/requirements.txt.
+flask>=3,<4
+paho-mqtt>=2,<3

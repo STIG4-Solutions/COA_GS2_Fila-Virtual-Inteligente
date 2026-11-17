@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "author": "Citizen Assist AI - 1CC-FEV",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -150,
+      "left": 170,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnChegada",
+      "top": 70,
+      "left": 230,
+      "attrs": { "color": "green", "key": "c", "label": "Chegada (c)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnConclusao",
+      "top": 150,
+      "left": 230,
+      "attrs": { "color": "red", "key": "s", "label": "Conclusao (s)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledVerde",
+      "top": 20,
+      "left": -150,
+      "attrs": { "color": "green", "label": "Valido" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledVermelho",
+      "top": 90,
+      "left": -150,
+      "attrs": { "color": "red", "label": "Invalido" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rVerde",
+      "top": 60,
+      "left": -250,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rVermelho",
+      "top": 130,
+      "left": -250,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": 180, "left": -150, "attrs": { "volume": "0.1" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:21", "lcd1:SDA", "green", [] ],
+    [ "esp:22", "lcd1:SCL", "blue", [] ],
+    [ "esp:5V", "lcd1:VCC", "red", [] ],
+    [ "esp:GND.2", "lcd1:GND", "black", [] ],
+
+    [ "esp:18", "btnChegada:1.l", "green", [] ],
+    [ "btnChegada:2.l", "esp:GND.3", "black", [] ],
+    [ "esp:19", "btnConclusao:1.l", "orange", [] ],
+    [ "btnConclusao:2.l", "esp:GND.3", "black", [] ],
+
+    [ "esp:26", "rVerde:1", "green", [] ],
+    [ "rVerde:2", "ledVerde:A", "green", [] ],
+    [ "ledVerde:C", "esp:GND.1", "black", [] ],
+
+    [ "esp:27", "rVermelho:1", "red", [] ],
+    [ "rVermelho:2", "ledVermelho:A", "red", [] ],
+    [ "ledVermelho:C", "esp:GND.1", "black", [] ],
+
+    [ "esp:25", "bz1:2", "purple", [] ],
+    [ "bz1:1", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}

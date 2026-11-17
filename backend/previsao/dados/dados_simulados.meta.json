@@ -1,0 +1,46 @@
+{
+  "AVISO": "DADOS SINTETICOS (SIMULADOS). Nao sao medicoes de um atendimento real.",
+  "gerado_por": "simulador.py",
+  "seed": 2026,
+  "dias_uteis": 40,
+  "data_inicial": "2026-09-01",
+  "linhas": 3703,
+  "taxa_chegada_por_hora": {
+    "8": 5,
+    "9": 7,
+    "10": 10,
+    "11": 12,
+    "12": 10,
+    "13": 9,
+    "14": 11,
+    "15": 12,
+    "16": 10,
+    "17": 6
+  },
+  "mediana_atendimento_min_por_hora": {
+    "8": 2.6,
+    "9": 2.6,
+    "10": 3.0,
+    "11": 3.3,
+    "12": 4.0,
+    "13": 4.0,
+    "14": 3.2,
+    "15": 3.0,
+    "16": 3.0,
+    "17": 2.7
+  },
+  "sigma_lognormal": 0.4,
+  "prob_atendimento_complexo": 0.08,
+  "fator_atendimento_complexo": 2.2,
+  "desvio_ritmo_do_dia": 0.12,
+  "colunas": [
+    "origem",
+    "data",
+    "hora_chegada",
+    "hora_do_dia",
+    "pessoas_a_frente",
+    "media_atendimento_recente_s",
+    "espera_real_s",
+    "atendimento_real_s"
+  ]
+}

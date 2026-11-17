@@ -1,0 +1,181 @@
+{
+  "info": {
+    "origem_dos_dados": [
+      "SIMULADO"
+    ],
+    "AVISO": "Treinado com dados SIMULADOS",
+    "linhas_treino": 2668,
+    "linhas_teste": 1034,
+    "dias_treino": 28,
+    "dias_teste": 12,
+    "treinado_em_linhas_com_fila_ge_1": 1714,
+    "regra": "pessoas_a_frente == 0 => espera 0; previsoes negativas viram 0",
+    "modelo_escolhido": "A_atributos_brutos",
+    "validacao_cruzada_treino": {
+      "A_atributos_brutos": {
+        "RMSE_s_medio": 375.7736643778846,
+        "MAE_s_medio": 237.93186623699435,
+        "folds": 4
+      },
+      "B_com_pessoas_x_media": {
+        "RMSE_s_medio": 378.4591521987224,
+        "MAE_s_medio": 236.2822166399439,
+        "folds": 4
+      }
+    }
+  },
+  "media_historica_s": 227.79544865067464,
+  "limite_acerto_s": 120,
+  "modelo_escolhido": "A_atributos_brutos",
+  "resultados": {
+    "A_atributos_brutos": {
+      "todas_as_linhas": {
+        "convencional": {
+          "MAE_s": 103.52773630665325,
+          "RMSE_s": 182.41972178992617,
+          "R2": 0.8479799804152945,
+          "vies_s": 24.739959341895755,
+          "acerto_ate_2min_pct": 65.57059961315281
+        },
+        "convencional_media_recente": {
+          "MAE_s": 121.28418085106382,
+          "RMSE_s": 229.5179372941368,
+          "R2": 0.7593474485879664,
+          "vies_s": 56.32011121856866,
+          "acerto_ate_2min_pct": 66.92456479690522
+        },
+        "ia_regressao_linear": {
+          "MAE_s": 95.37925232932281,
+          "RMSE_s": 185.3087081872416,
+          "R2": 0.8431267611760074,
+          "vies_s": 3.2497734497924218,
+          "acerto_ate_2min_pct": 73.5009671179884
+        }
+      },
+      "so_com_fila_ge_1": {
+        "convencional": {
+          "MAE_s": 175.77615655349666,
+          "RMSE_s": 237.69684216616912,
+          "R2": 0.7993330927639075,
+          "vies_s": 42.00511980216783,
+          "acerto_ate_2min_pct": 41.54351395730706
+        },
+        "convencional_media_recente": {
+          "MAE_s": 205.92420853858783,
+          "RMSE_s": 299.0668354276697,
+          "R2": 0.6823378700894076,
+          "vies_s": 95.62396551724137,
+          "acerto_ate_2min_pct": 43.84236453201971
+        },
+        "ia_regressao_linear": {
+          "MAE_s": 161.94112792860392,
+          "RMSE_s": 241.46125391378538,
+          "R2": 0.7929268279999183,
+          "vies_s": 5.5176777456245745,
+          "acerto_ate_2min_pct": 55.008210180623976
+        }
+      }
+    },
+    "B_com_pessoas_x_media": {
+      "todas_as_linhas": {
+        "convencional": {
+          "MAE_s": 103.52773630665325,
+          "RMSE_s": 182.41972178992617,
+          "R2": 0.8479799804152945,
+          "vies_s": 24.739959341895755,
+          "acerto_ate_2min_pct": 65.57059961315281
+        },
+        "convencional_media_recente": {
+          "MAE_s": 121.28418085106382,
+          "RMSE_s": 229.5179372941368,
+          "R2": 0.7593474485879664,
+          "vies_s": 56.32011121856866,
+          "acerto_ate_2min_pct": 66.92456479690522
+        },
+        "ia_regressao_linear": {
+          "MAE_s": 95.3500048390177,
+          "RMSE_s": 185.26645837660737,
+          "R2": 0.8431982862449848,
+          "vies_s": 3.2047503724929234,
+          "acerto_ate_2min_pct": 73.5009671179884
+        }
+      },
+      "so_com_fila_ge_1": {
+        "convencional": {
+          "MAE_s": 175.77615655349666,
+          "RMSE_s": 237.69684216616912,
+          "R2": 0.7993330927639075,
+          "vies_s": 42.00511980216783,
+          "acerto_ate_2min_pct": 41.54351395730706
+        },
+        "convencional_media_recente": {
+          "MAE_s": 205.92420853858783,
+          "RMSE_s": 299.0668354276697,
+          "R2": 0.6823378700894076,
+          "vies_s": 95.62396551724137,
+          "acerto_ate_2min_pct": 43.84236453201971
+        },
+        "ia_regressao_linear": {
+          "MAE_s": 161.89146962815155,
+          "RMSE_s": 241.4062014969122,
+          "R2": 0.7930212413174587,
+          "vies_s": 5.441234622590616,
+          "acerto_ate_2min_pct": 55.008210180623976
+        }
+      }
+    }
+  },
+  "por_faixa_de_fila": {
+    "1-2 pessoas": {
+      "linhas": 438,
+      "convencional": {
+        "MAE_s": 144.79253770375084,
+        "RMSE_s": 185.66003691476072,
+        "R2": 0.12807237031355956,
+        "vies_s": 78.86127353104267,
+        "acerto_ate_2min_pct": 45.4337899543379
+      },
+      "ia_regressao_linear": {
+        "MAE_s": 122.01273464785203,
+        "RMSE_s": 184.08142469646666,
+        "R2": 0.14283681742485654,
+        "vies_s": -38.255327779134014,
+        "acerto_ate_2min_pct": 63.6986301369863
+      }
+    },
+    "3-5 pessoas": {
+      "linhas": 128,
+      "convencional": {
+        "MAE_s": 232.10503944316906,
+        "RMSE_s": 317.46536846856816,
+        "R2": 0.2073904261160151,
+        "vies_s": -18.386137661638,
+        "acerto_ate_2min_pct": 35.9375
+      },
+      "ia_regressao_linear": {
+        "MAE_s": 247.89283240028618,
+        "RMSE_s": 324.17533825832714,
+        "R2": 0.1735310403794207,
+        "vies_s": 70.05270179770747,
+        "acerto_ate_2min_pct": 35.15625
+      }
+    },
+    "6 ou mais": {
+      "linhas": 43,
+      "convencional": {
+        "MAE_s": 323.7000646072313,
+        "RMSE_s": 386.10396434761685,
+        "R2": 0.5864920312080659,
+        "vies_s": -153.6440517764375,
+        "acerto_ate_2min_pct": 18.6046511627907
+      },
+      "ia_regressao_linear": {
+        "MAE_s": 312.797362454046,
+        "RMSE_s": 409.57503970354014,
+        "R2": 0.5346900645732326,
+        "vies_s": 259.2872903311514,
+        "acerto_ate_2min_pct": 25.581395348837212
+      }
+    }
+  }
+}
