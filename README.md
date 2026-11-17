@@ -66,7 +66,7 @@ O PNG é uma pré-visualização do diagrama.
 │   ├── ferramentas/           simulador do ESP32 e exportação de dados reais
 │   └── tests/                 testes do backend, de ponta a ponta e do painel
 ├── analise/                   scripts das medições da Etapa 5 (presentes no relatório)
-├── docs/                      diagrama de arquitetura e  o relatório técnico em PDF
+├── docs/                      diagrama de arquitetura e o relatório técnico em PDF
 └── README.md                  este arquivo
 ```
 
@@ -185,18 +185,6 @@ equivale/substitui** a execução no Wokwi na prática.
 - Alguns trechos do firmware **bloqueiam o laço** (bipes de ≈ 0,28 s; tentativa de conexão ao broker).
 - O log e a fila do ESP32 ficam **só na RAM**; o histórico completo está no servidor.
 - O painel usa *polling* (≈ 7,3 MB por hora por navegador aberto) e o Flask embutido é para demonstração.
-
-## Solução de problemas
-
-| Problema | Solução |
-|---|---|
-| `ModuleNotFoundError: No module named 'numpy'` (ou `flask`, `paho`) | Instale as bibliotecas no **mesmo** Python: `python -m pip install -r requirements.txt` |
-| No Wokwi: `expected initializer before '-' token` | Você trocou o **nome** `TOPICO_BASE`; troque só o **texto entre aspas** |
-| No Wokwi: `fila_core.h DESATUALIZADO` | Substitua `fila_core.h` pela versão deste repositório e apague o `modelo_coef.h`, se existir |
-| No Wokwi: `'codigo' is not a member of 'fila'` | O `fila_core.h` do projeto está antigo; substitua-o |
-| O painel mostra "Sem conexão com o servidor" | O backend não está rodando ou a porta 5000 está ocupada (`FILA_HTTP_PORTA`) |
-| O painel não recebe eventos | Confira se o tópico é **igual** no firmware e no backend e se o Serial mostrou `MQTT conectado ao broker` |
-| PowerShell bloqueia o `activate` | Use o CMD, ou rode `Set-ExecutionPolicy -Scope Process RemoteSigned` |
 
 ## Tecnologias
 
