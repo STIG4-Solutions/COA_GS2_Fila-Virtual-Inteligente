@@ -1,6 +1,6 @@
 # Citizen Assist AI — Sistema Inteligente de Gerenciamento de Filas Virtuais
 
-Global Solution 2026.2 · FIAP · Turma 1CC-FEV · Arquitetura e Organização de Computadores
+Global Solution 2026.2 · FIAP · Turma 1CCR · Arquitetura e Organização de Computadores
 
 Protótipo que registra a **chegada** e a **conclusão** de atendimentos com botões (ESP32 simulado no Wokwi),
 valida as operações, acompanha o tamanho da fila, **estima o tempo de espera** (média histórica × regressão linear)
