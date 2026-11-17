@@ -19,8 +19,8 @@ Sergio Augusto | RM 570184 **(Representante)**
 Gabriel Freitas | RM: 572943
 Giovanni Merlotti | RM: 573721 |
 | Projeto no Wokwi | https://wokwi.com/projects/480890007286427649 |
-| Vídeo de demonstração (até 5 min) | _(colar o link)_ |
-| Relatório técnico | _(anexar o PDF na pasta `docs/`)_ |
+| Vídeo de demonstração (até 5 min) | https://youtu.be/Ej9Zt5xLL28?si=GRlG4IAIbUUc4fkM |
+| Relatório técnico | `docs/` e no `.txt` da entrega |
 
 ## Arquitetura
 
